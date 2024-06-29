@@ -1,17 +1,17 @@
-//* Get a reference to the #add-employees-btn element
+//* Get a reference to the #add-employees-btn element *\\
 const addEmployeesBtn = document.querySelector("#add-employees-btn");
 
-//* Collect employee data
+//*  Collect employee data  *\\
 const employeesArray = [];
 
-//* Function to add employees to the array *\\
+//*  Function to add employees to the array  *\\
 
 const collectEmployees = function () {
   let keepGoing = true;
 
   while (keepGoing) {
-    // TODO: Get user input to create and return an array of employee objects
-    // Prompt to add employee data 
+    
+    // Prompt user to add employee data 
     const firstName = prompt("Please enter the employee's first name");
     const lastName = prompt("Please enter the employee's last name");
     let salary = prompt("Please enter the employee's salary");
@@ -22,7 +22,7 @@ const collectEmployees = function () {
       lastName: lastName,
       salary: parseFloat(salary)
     }
-    // push employee to employeesArray
+    // Pushes individual employee object to employeesArray
     employeesArray.push(employee);
 
     keepGoing = confirm("Would you like to add another employee?");
@@ -35,7 +35,7 @@ const collectEmployees = function () {
 
 const displayAverageSalary = function(employeesArray) {
 
-  // Declares a variable that totals the salaries into a sum
+  // Calculates the total sum of the employee salaries
   let salaryTotal = 0;
   const numberEmployees = employeesArray.length;
 
@@ -43,8 +43,7 @@ const displayAverageSalary = function(employeesArray) {
     salaryTotal += employee.salary;
   }
 
-  // Declares a variable that Calculates the average salary using previous sum. 
-  // Then the averageSalary is logged to the console to complete the displayAverageSalary function
+  // Calculates the average salary using previous total sum, and logs it to the console to complete the displayAverageSalary function
   const averageSalary = salaryTotal / numberEmployees
   console.log(`Your employees have a total average salary of $ ${averageSalary}.`);
 }
@@ -53,7 +52,7 @@ const displayAverageSalary = function(employeesArray) {
 
 const getRandomEmployee = function(employeesArray) {
 
-  
+  // Selects a random employee object from the employeesArray, and logs the winner to the console to complete the function
   const randomEmployee = employeesArray[Math.floor(Math.random()*employeesArray.length)];
   console.log(`Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`)
 }
